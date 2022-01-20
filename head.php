@@ -3,4 +3,7 @@
 <title>MC-Whitelist</title>
 
 <!-- Make database connection -->
-<?php include('db-connect.php'); ?>
+<?php
+  include('db-connect.php');
+  include('check-login.php');
+?>
