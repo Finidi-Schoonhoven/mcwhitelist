@@ -3,7 +3,7 @@
 if (isset($_POST["email"]) && isset($_POST["pass"])){
 
   //Get User Data Based On Email
-  $stmt = $pdo->prepare("SELECT Userid, Password, Permission FROM user WHERE Email='" .strtolower($_POST["email"]) . "'");
+  $stmt = $pdo->prepare("SELECT Userid, Username, Password, Permission FROM user WHERE Email='" .strtolower($_POST["email"]) . "'");
   $stmt->execute();
   $userData = $stmt->fetch();
 
@@ -11,6 +11,7 @@ if (isset($_POST["email"]) && isset($_POST["pass"])){
   $userId = $userData["Userid"];
   $userPass = $userData["Password"];
   $userPerm = $userData["Permission"];
+  $userName = $userData["Username"];
 
   //Check Credentials & User Permission State
 
@@ -25,6 +26,7 @@ if (isset($_POST["email"]) && isset($_POST["pass"])){
       //Set Session Variables
       $_SESSION["userid"] = $userId;
       $_SESSION["permission"] = $userPerm;
+      $_SESSION["username"] = $userName;  
     }
   } else {
     //Deal With Incorrect Credentials

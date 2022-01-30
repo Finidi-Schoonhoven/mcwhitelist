@@ -17,11 +17,6 @@
   <div class="main-welcome main-welcome-p">
     Welcome to MC-Whitelist! The place to be for finding and sharing (private) whitelisted servers for Minecraft Java & Bedrock edition. Start browsing for servers now! To apply for a server or start listing your own you can sign up for free!
   </div>
-  <?php
-    if (isset($_SESSION["userid"])){
-      echo '<p>You are logged in</p>';
-    }
-  ?>
   <!-- Browse Button -->
   <a class="no-link-deco" href="#">
     <div class="main-browse-button">
